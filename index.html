@@ -2,99 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Uni buddy Finder</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - Uni Buddy Finder</title>
+  <link rel="stylesheet" href="style1.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="container">
-    <div class="login-wrapper">
-      <!-- Header -->
-      <div class="header">
-        <div class="logo">🔑</div>
-        <h2>Welcome back</h2>
-        <p>Sign in to your account to continue</p>
-      </div>
+  <header class="main-header">
+    <h1 class="site-title">Uni Buddy Finder</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="signin.html">logout</a></li>
+      </ul>
+    </nav>
+  </header>
 
-      <!-- Form -->
-      <div class="form-container">
-        <form id="loginForm" class="login-form">
-          <!-- General Error -->
-          <div id="generalError" class="error-message general-error" style="display: none;">
-            <p></p>
-          </div>
+  <main>
+    <section>
+      <h2>Find Your Study Buddy</h2>
+      <p>Connect with other Ulster University computing systems students who share your modules, study styles, and availability.</p>
+    </section>
 
-          <!-- Email Field -->
-          <div class="form-group">
-            <label for="email">Email address</label>
-            <div class="input-wrapper">
-              <span class="input-icon">📧</span>
-              <input 
-                type="email" 
-                id="email" 
-                name="email" 
-                placeholder="Enter your email"
-                autocomplete="email"
-              />
-            </div>
-            <div class="error-message" id="emailError" aria-live="polite"></div>
-          </div>
+    <section>
+      <h2>Get Started</h2>
+      <form id="buddyForm">
+        <fieldset>
+          <legend>Student Information</legend>
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" required />
 
-          <!-- Password Field -->
-          <div class="form-group">
-            <label for="password">Password</label>
-            <div class="input-wrapper">
-              <span class="input-icon">🔒</span>
-              <input 
-                type="password" 
-                id="password" 
-                name="password" 
-                placeholder="Enter your password"
-                autocomplete="current-password"
-              />
-              <button type="button" class="password-toggle" id="passwordToggle">
-                <span id="eyeIcon">👁️</span>
-              </button>
-            </div>
-            <div class="error-message" id="passwordError" aria-live="polite"></div>
-          </div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </fieldset>
 
-          <!-- Remember Me & Forgot Password -->
-          <div class="form-options">
-            <div class="checkbox-wrapper">
-              <input type="checkbox" id="rememberMe" name="rememberMe" />
-              <label for="rememberMe">Remember me</label>
-            </div>
-            <a href="#" class="forgot-password" id="forgotPassword">Forgot password?</a>
-          </div>
+        <fieldset>
+          <legend>Study Preferences</legend>
+          <label for="modules">Modules:</label>
+          <input type="text" id="modules" name="modules" placeholder="e.g., Computing Systems" required />
 
-          <!-- Submit Button -->
-          <button type="submit" class="submit-btn" id="submitBtn">
-            <span class="btn-text">Sign in</span>
-            <div class="loading-spinner" style="display: none;">
-              <div class="spinner"></div>
-              <span>Signing in...</span>
-            </div>
-          </button>
-        </form>
+          <label for="study-style">Study Style:</label>
+          <select id="study-style" name="study-style" required>
+            <option value="">--Select--</option>
+            <option value="solo">Solo Study</option>
+            <option value="group">Group Study</option>
+            <option value="mixed">Mixed</option>
+          </select>
 
-        <!-- Demo Credentials -->
-        <div class="demo-credentials">
-          <p class="demo-title">Demo credentials:</p>
-          <p class="demo-text">Email: admin@example.com</p>
-          <p class="demo-text">Password: password123</p>
-        </div>
+          <label for="time">Preferred Time:</label>
+          <input type="time" id="time" name="time" required />
+        </fieldset>
 
-        <!-- Sign Up Link -->
-        <div class="signup-link">
-          <p>Don't have an account? <a href="signup.html" id="signupLink">Sign up now</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
+        <button type="submit">Find Buddy</button>
+      </form>
+    </section>
+  </main>
 
-  <!-- Scripts -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="script.js"></script>
+  <footer>
+    <p>&copy; 2025 Uni Buddy Finder</p>
+  </footer>
 </body>
 </html>
